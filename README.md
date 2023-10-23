@@ -14,7 +14,7 @@ Make sure you have the following software installed on your machine:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/your-project.git
+   git clone https://github.com/yogyy/express-ts.git
    ```
 2. Navigate to the project directory:
 
