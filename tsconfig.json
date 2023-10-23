@@ -5,7 +5,11 @@
     "esModuleInterop": true,
     "target": "ES2020",
     "sourceMap": true,
-    "outDir": "./build"
+    "outDir": "./build",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+    }
   },
   "include": ["src/**/*"]
 }

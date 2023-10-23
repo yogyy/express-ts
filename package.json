@@ -1,5 +1,5 @@
 {
-  "name": "express01",
+  "name": "express-01",
   "version": "1.0.0",
   "description": "learning backend",
   "main": "build/index.js",
@@ -7,7 +7,7 @@
     "tsc": "rm -rf build/ && tsc",
     "ts": "rm -rf build/ && tsc -w",
     "dev": "nodemon ./build/index.js",
-    "start": "nodemon src/index.ts",
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "yogyy",
