@@ -13,7 +13,7 @@ export const auth = (req: Request, res: Response, next: NextFunction) => {
     const credential = jwt.verify(token, secretKey);
     if (credential) {
       req.app.locals.credential = credential;
-      next();
+      return next();
     } else {
       return res.send("token invalid");
     }

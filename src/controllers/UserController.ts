@@ -1,12 +1,5 @@
 import { Request, Response } from "express";
-
-interface IController {
-  index(req: Request, res: Response): Response;
-  create(req: Request, res: Response): Response;
-  show(req: Request, res: Response): Response;
-  update(req: Request, res: Response): Response;
-  delete(req: Request, res: Response): Response;
-}
+import IController from "~/types/controller";
 
 let dummyData = [
   { id: "1", name: "batman" },
@@ -17,7 +10,7 @@ let dummyData = [
 
 class UserController implements IController {
   index(req: Request, res: Response): Response {
-    console.log('this is index');
+    console.log("this is demo user index");
     return res.send(dummyData);
   }
   create(req: Request, res: Response): Response {
@@ -42,7 +35,7 @@ class UserController implements IController {
   delete(req: Request, res: Response): Response {
     const { id } = req.params;
     const user = dummyData.find((user) => user.id === id);
-    if (!user) return res.status(404).send("User not found");
+    if (!user) return res.status(404).send("user not found");
     dummyData.splice(dummyData.indexOf(user), 1);
     return res.send("delete suksees");
   }

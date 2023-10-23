@@ -7,7 +7,7 @@ class AuthController {
     let { username, password } = req.body;
 
     const hassPassword: string = await Authentication.passHash(password);
-    await db.User.create({
+    await db.user.create({
       username,
       password: hassPassword,
     });
@@ -18,7 +18,7 @@ class AuthController {
   login = async (req: Request, res: Response): Promise<Response> => {
     let { username, password } = req.body;
 
-    const user = await db.User.findOne({
+    const user = await db.user.findOne({
       where: { username },
     });
 

@@ -4,7 +4,8 @@ import compression from "compression";
 import { config as dotenv } from "dotenv";
 import UserRoutes from "./routes/UserRoutes";
 import AuthRoutes from "./routes/AuthRoutes";
-import express, { Application } from "express";
+import TodoRoutes from "./routes/TodoRoutes";
+import express, { Application, Request, Response } from "express";
 
 class App {
   public app: Application;
@@ -24,10 +25,13 @@ class App {
   }
 
   protected routes(): void {
-    this.app.use("/", UserRoutes);
+    this.app.route("/").get((req: Request, res: Response) => {
+      res.send("this is route using ts");
+    });
     this.app.use("/api/v1/users", UserRoutes);
 
     this.app.use("/api/v1/auth", AuthRoutes);
+    this.app.use("/api/v1/todos", TodoRoutes);
   }
 }
 
